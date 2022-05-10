@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v7.js"></script>
+
+</head>
+<body>
+	<h1>d3.arc()</h1>
+	<p>원형 차트를 생성하는 호 생성기를 생성 (시작 각도와 끝 각도의 차이를 기준)</p>
+  <svg width="300" height="300"></svg>
+
+<script>
+const svg = d3.select("svg")
+							.append("g")
+							.attr("transform", "translate(150,150)");
+  
+const arc1 = d3.arc()
+								.innerRadius(40)
+								.outerRadius(50)
+								.startAngle(100)
+								.endAngle(2 * 180);
+
+svg.append("path")
+		.attr("d", arc1)
+		.attr("fill","red");
+
+// 
+
+const arc2 = d3.arc()
+								.innerRadius(40)
+								.outerRadius(50)
+								.startAngle(10)
+								.endAngle(8);
+
+svg.append("path")
+		.attr("d", arc2)
+		.attr("fill","blue")
+		.attr("stroke", "blue")
+		.attr("stroke-width", "1");
+		
+</script>
+    
+</body>
+</html>
